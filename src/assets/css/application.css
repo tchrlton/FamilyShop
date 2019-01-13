@@ -2,6 +2,19 @@ body {
     padding-top: 54px;
 }
 
+h1 {
+    padding-top: 10px;
+}
+
+.jumbotron {
+    background-image: url("booth-branding-business-264636 (1).jpg");
+    background-size: cover;
+}
+
+.display-3, .lead {
+    color: white;
+}
+
 .icon {
     font-size: 25px;
     padding-left: 2.5px;
