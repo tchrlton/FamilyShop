@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
     },
     purchased: {
       type: DataTypes.BOOLEAN,
-      allowNull: false
+      defaultValue: false
     }
   }, {});
   Grocery.associate = function(models) {
