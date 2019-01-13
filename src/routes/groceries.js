@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-
 const groceryController = require("../controllers/groceryController");
 const validation = require("./validation");
 

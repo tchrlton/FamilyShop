@@ -16,7 +16,8 @@ module.exports = {
     create(req, res, next){
         let newGrocery = {
           item: req.body.item,
-          purchased: req.body.purchased
+          purchased: req.body.purchased,
+          userId: req.user.id
         };
         groceryQueries.addGrocery(newGrocery, (err, grocery) => {
           if(err){

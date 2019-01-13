@@ -13,7 +13,8 @@ module.exports = {
     addGrocery(newGrocery, callback){
         return Grocery.create({
             item: newGrocery.item,
-            purchased: false
+            purchased: false,
+            userId: newGrocery.userId
         })
         .then((grocery) => {
             callback(null, grocery);
