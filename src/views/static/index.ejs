@@ -8,11 +8,12 @@
     <% include ./partials/navbar.ejs %>
 
       <main class="container">
+        <% include ../static/partials/messages.ejs %>
 
         <header class="jumbotron my-4">
           <h1 class="display-3">FamilyShop</h1>
-          <p class="lead">An shared-real time Grocery Shopping List.</p>
-          <a href="#" class="btn btn-primary btn-lg">Sign up</a>
+          <p class="lead">A shared-real time Grocery Shopping List.</p>
+          <a href="/users/sign_up" class="btn btn-primary btn-lg">Sign up</a>
         </header>
 
         <section class="row text-center">

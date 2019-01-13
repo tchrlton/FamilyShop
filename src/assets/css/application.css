@@ -1,3 +1,21 @@
 body {
     padding-top: 54px;
 }
+
+.icon {
+    font-size: 25px;
+    padding-left: 2.5px;
+}
+
+.list-group-item {
+    font-size: 1.2em;
+    padding-right: 10px;
+}
+
+.btn-add-item {
+    margin-bottom: 35px;
+}
+
+.new-item-form {
+    margin-top: 30px;
+}

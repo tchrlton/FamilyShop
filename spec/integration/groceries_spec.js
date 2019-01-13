@@ -79,6 +79,29 @@ describe("routes : groceries", () => {
         }
       );
     });
+
+    it("should not create a new grocery item that fails validations", (done) => {
+      const options = {
+        url: `${base}/${this.grocery.id}/create`,
+        form: {
+          item: 'a'
+        }
+      };
+      request.post(options,
+        (err, res, body) => {
+
+          Grocery.findOne({where: {item: "a"}})
+          .then((grocery) => {
+              expect(grocery).toBeNull();
+              done();
+          })
+          .catch((err) => {
+            console.log(err);
+            done();
+          });
+        }
+      );
+    });
   });
 
   describe("GET /groceries/:id", () => {

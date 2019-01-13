@@ -8,10 +8,17 @@ module.exports = (sequelize, DataTypes) => {
     purchased: {
       type: DataTypes.BOOLEAN,
       defaultValue: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
     }
   }, {});
   Grocery.associate = function(models) {
-    // associations can be defined here
+    Grocery.belongsTo(models.User, {
+      foreignKey: "userId",
+      onDelete: "CASCADE"
+    });
   };
   return Grocery;
 };
