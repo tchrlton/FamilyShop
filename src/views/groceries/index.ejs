@@ -9,15 +9,22 @@
 
       <h1>Shopping List</h1>
       <% if(currentUser) { %>
-      <a href="/groceries/new" class="btn btn-success">Add Item</a>
-
-      <ul class="list-group">
-        <% groceries.forEach((grocery) => { %>
-          <li class="list-group-item">
-            <a href="/groceries/<%= grocery.id %>"> <%= grocery.item %> </a>
-          </li>
-        <% }) %>
-      </ul>
+      <form class="new-item-form" action="/groceries/create" method="post">
+        <div class="form-group">
+          <input type="text" class="form-control" name="item" aria-describedby="itemHelp" placeholder="Enter Item">
+        </div>
+        <button type="submit" class="btn btn-success btn-add-item">Add Item</button>
+      </form>
+        <ul class="list-group">
+         <% groceries.forEach((grocery) => { %>
+           <li class="list-group-item">
+             <a href="/groceries/<%= grocery.id %>"> <%= grocery.item %> </a>
+             <% if(grocery.purchased === true) { %>
+              <i class="icon ion-md-checkmark"></i>
+             <% } %>
+           </li>
+         <% }) %>
+        </ul>
       <% } %>
     </main>
   </body>
